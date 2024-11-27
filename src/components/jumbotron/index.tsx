@@ -6,6 +6,7 @@ import {
   SubTitle,
   Pane,
   Image,
+  Item,
 } from "./styles/jumbotron";
 
 interface JumbotronProps extends DefaultNode {
@@ -16,7 +17,11 @@ export default function Jumbotron({
   children,
   direction = "row",
 }: JumbotronProps) {
-  return <Inner direction={direction}>{children}</Inner>;
+  return (
+    <Item>
+      <Inner direction={direction}>{children}</Inner>
+    </Item>
+  );
 }
 
 Jumbotron.Container = function JumbotronContainer({

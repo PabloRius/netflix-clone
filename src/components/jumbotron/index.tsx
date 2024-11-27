@@ -1,11 +1,15 @@
-import { Inner, Container } from "./styles/jumbotron";
+import { DefaultNode } from "../../types/default.node";
+import {
+  Inner,
+  Container,
+  Title,
+  SubTitle,
+  Pane,
+  Image,
+} from "./styles/jumbotron";
 
-interface JumbotronProps {
-  children: React.ReactNode;
+interface JumbotronProps extends DefaultNode {
   direction: string;
-}
-interface JumbotronContainerProps {
-  children: React.ReactNode;
 }
 
 export default function Jumbotron({
@@ -19,6 +23,31 @@ export default function Jumbotron({
 Jumbotron.Container = function JumbotronContainer({
   children,
   ...restProps
-}: JumbotronContainerProps) {
+}: DefaultNode) {
   return <Container {...restProps}>{children}</Container>;
+};
+
+Jumbotron.Title = function JumbotronTitle({
+  children,
+  ...restProps
+}: DefaultNode) {
+  return <Title {...restProps}>{children}</Title>;
+};
+
+Jumbotron.SubTitle = function JumbotronSubTitle({
+  children,
+  ...restProps
+}: DefaultNode) {
+  return <SubTitle {...restProps}>{children}</SubTitle>;
+};
+
+Jumbotron.Pane = function JumbotronPane({
+  children,
+  ...restProps
+}: DefaultNode) {
+  return <Pane {...restProps}>{children}</Pane>;
+};
+
+Jumbotron.Image = function JumbotronImage({ ...restProps }) {
+  return <Image {...restProps}></Image>;
 };

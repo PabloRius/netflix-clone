@@ -16,9 +16,10 @@ interface JumbotronProps extends DefaultNode {
 export default function Jumbotron({
   children,
   direction = "row",
+  ...restProps
 }: JumbotronProps) {
   return (
-    <Item>
+    <Item {...restProps}>
       <Inner direction={direction}>{children}</Inner>
     </Item>
   );

@@ -6,7 +6,7 @@ interface InnerProps {
 
 export const Item = styled.div`
   display: flex;
-  border-bottom: 7px solid #222;
+  border-bottom: 8px solid #222;
   padding: 50px 5%;
   color: white;
   overflow: hidden;
@@ -15,8 +15,8 @@ export const Item = styled.div`
 export const Inner = styled.div<InnerProps>`
   display: flex;
   align-items: center;
-  flex-direction: ${({ direction }) => direction};
   justify-content: space-between;
+  flex-direction: ${({ direction }) => direction};
   max-width: 1100px;
   margin: auto;
   width: 100%;
